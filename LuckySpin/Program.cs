@@ -4,10 +4,10 @@
  */
 
 //TODO: use the AddMvc method to enable MVC for this application
-builder.Services.AddMvc();
 
-//TODO: DIJ Part 1: Notify the app that the TextTranform class is available for DIJ
-builder.Services.AddTransient<LuckySpin.Models.TextTransform>();
+
+//TODO: DIJ Part 1: Register the TextTranform class as available for DIJ
+
 
 var app = builder.Build();
 

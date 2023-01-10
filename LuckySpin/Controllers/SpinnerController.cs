@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-//TODO: import the LuckySpin.Models namespace into the Controller with a "using" command
+//Gives access to the Model classes in the Controller
 using LuckySpin.Models;
 
 namespace LuckySpin.Controllers
@@ -14,21 +14,22 @@ namespace LuckySpin.Controllers
         {
             Random random = new Random();
 
-            //Create a new spin object from the Model class Spin
+            //Creates a new spin object from the Model class Spin
             Spin spin = new Spin
             {
-                //TODO: assign its properties, Luck and Numbers, appropriate values in the constructor
-                Luck = luck,
-                Numbers = new int[] { random.Next(1, 9), random.Next(1, 9), random.Next(1, 9) }
+                //TODO: assign properties Luck and Numbers, appropriate values in the constructor
+
             };
 
             //TODO: Use the if-else to assign spin's ImageShown property a CSS display value (either "block" or "none")
-            if (Array.Exists(spin.Numbers, n => n == luck))
-                spin.ImageDisplay = "block"; 
-            else
-                spin.ImageDisplay = "none";
+            if (spin.Numbers is not null && Array.Exists(spin.Numbers, n => n == luck)) {
 
-            return View( spin ); //Pass the spin object to the View as a parameter
+            }
+            else {
+
+            }
+            
+            return View( spin ); //Passes the spin object to the View as a parameter
         }
     }
 }
