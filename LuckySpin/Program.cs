@@ -1,33 +1,27 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 
-/* Install Services using the builder.Services methods
- */
-
-//TODO: use the AddMvc method to enable MVC for this application
+/* Install Services using the builder.Services methods */
+//TODO: use the AddMvc Service to enable MVC for this application
 
 
-//TODO: DIJ Part 1: Register the TextTranform class as available for DIJ
+//TODO: DIJ Part 1: Register the TextTranform class as available for DIJ using th AddTransient Service
 
 
 var app = builder.Build();
 
 
-/* Middleware in the HTTP Request Pipeline
- */
+/* Add Middleware to the HTTP Request-Response Pipeline */
 app.UseStaticFiles();
-
-if (!app.Environment.IsDevelopment()) {
-    app.UseExceptionHandler("/Spinner/Error");
-}
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller}/{action}/{luck}",
+    pattern: "{controller}/{action}/{luck:range(1,9)}",
     defaults: new {
         controller = "Spinner",
         action = "Index",
         luck = 7
     });
 
+/* Start the app */
 app.Run();
 
