@@ -18,7 +18,10 @@
     <h1> Lucky Number </h1>
     <button onclick='history.go(0)'>Spin</button>
  <!-- //TODO: Use Model values in the appropriate places in this template  -->
-    <div>2</div><div>7</div><div>9</div>
+    @foreach (var num in new int[]{2,7,9})
+    {
+        <div>@num</div>
+    }
     <img src="/Images/LuckySpinCoins.jpg" alt="Coins" style="display:block" />
 </body>
 </html>
