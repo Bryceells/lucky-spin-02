@@ -1,4 +1,5 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using LuckySpin.Models;
+var builder = WebApplication.CreateBuilder(args);
 
 /* Install Services using the builder.Services methods */
 //TODO: use the AddMvc Service to enable MVC for this application

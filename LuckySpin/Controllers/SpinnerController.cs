@@ -18,16 +18,11 @@ namespace LuckySpin.Controllers
             Spin spin = new Spin
             {
                 //TODO: assign properties Luck and Numbers, appropriate values in the constructor
-
+                
             };
 
-            //TODO: Use the if-else to assign spin's ImageShown property a CSS display value (either "block" or "none")
-            if (spin.Numbers is not null && Array.Exists(spin.Numbers, n => n == luck)) {
+            //TODO: Use a conditional to assign spin's ImageShown property a CSS display value of "block" if the lucky number is in the Numbers array
 
-            }
-            else {
-
-            }
             
             return View( spin ); //Passes the spin object to the View as a parameter
         }
