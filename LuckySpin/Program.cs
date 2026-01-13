@@ -2,11 +2,12 @@
 var builder = WebApplication.CreateBuilder(args);
 
 /* Install Services using the builder.Services methods */
-//TODO: use the AddMvc Service to enable MVC for this application
+// use the AddMvc Service to enable MVC for this application
+builder.Services.AddMvc();
 
 
-//TODO: DIJ Part 1: Register the TextTranform class as available for DIJ using th AddTransient Service
-
+//DIJ Part 1: Register the TextTranform class as available for DIJ using th AddTransient Service;
+builder.Services.AddTransient<TextTransform>();
 
 var app = builder.Build();
 

@@ -3,6 +3,7 @@
 @{
     //This View requires a Spin object as it's model
     //TODO: DIJ Part 2: Inject the TextTransform Service into the View as variable called "Transform"
+    @inject LuckySpin.Models.TextTransform tt;
 }
 
 <!DOCTYPE html>
@@ -14,15 +15,15 @@
 </head>
 <body>
 
- <!-- //TODO: Change the <h1> text below to display the lucky number as a word, like "Lucky Seven" . Use the DIJ TT.numberToText() along with a Model's luck value -->
-    <h1> Lucky Number </h1>
+ <!-- #TODO //Change the <h1> text below to display the lucky number as a word, like "Lucky Seven" . Use the DIJ TT.numberToText() along with a Model's luck value -->
+    <h1> Lucky Number @tt.numberToText(Model.Luck) </h1>
     <button onclick='history.go(0)'>Spin</button>
- <!-- //TODO: Use Model values in the appropriate places in this template  -->
-    @foreach (var num in new int[]{2,7,9})
+ <!-- //Use Model values in the appropriate places in this template  -->
+    @foreach (var num in Model.Numbers)
     {
         <div>@num</div>
     }
-    <img src="/Images/LuckySpinCoins.jpg" alt="Coins" style="display:block" />
+    <img src="/Images/LuckySpinCoins.jpg" alt="Coins" style="display:@Model.ImageDisplay" />
 </body>
 </html>
 
